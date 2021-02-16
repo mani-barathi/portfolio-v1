@@ -11,9 +11,9 @@ function Navbar() {
                 </div>
 
                 <div className="navbar__right">
-                    <Button href="#about" size="medium" color="inherit">About</Button>
-                    <Button href="#projects" size="medium" color="inherit">Projects</Button>
-                    <Button href="#contact" size="medium" color="inherit">Contact</Button>
+                    <Button href="/" size="medium" color="inherit">Home</Button>
+                    <Button href="/projects" size="medium" color="inherit">Projects</Button>
+                    <Button href="/contact" size="medium" color="inherit">Contact</Button>
                 </div>
 
             </div>
