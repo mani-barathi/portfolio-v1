@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import "../css/Home.css"
+import "../css/HomePage.css"
 
 function Home() {
     const [showText, setShowText] = useState(false)
@@ -9,11 +9,6 @@ function Home() {
         setTimeout(() => {
             setShowText(true)
         }, 800)
-
-        // setTimeout(() => {
-        //     setShowText(true)
-        // }, 1000)
-
 
         const NAME = nameRef.current.textContent
         nameRef.current.innerHTML = ''
@@ -53,9 +48,8 @@ function Home() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eius.
             </h3>
 
-            <h4 className="love-text">
-                Made with 💙
-            </h4>
+
+            <h4 className="love-text">Made with 💙</h4>
         </div>
     )
 }
