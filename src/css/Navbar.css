@@ -3,6 +3,7 @@
     padding:0.5rem 1rem;
     background-color: #f4f4f4;
     transition: all 0.3s ease;
+    position: sticky;
 }
 
 .shadow{
