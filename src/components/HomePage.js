@@ -59,7 +59,8 @@ function Home() {
 
             <div style={{ marginTop: "1rem" }}>
                 <Tooltip classes={{ tooltip: classes.customTooltip }} title="GitHub Profile" arrow>
-                    <Button target="_blank" href="https://github.com/mani-barathi" variant="contained">
+                    <Button style={{ backgroundColor: "#F2F3F4" }} variant="contained"
+                        target="_blank" href="https://github.com/mani-barathi" >
                         <GitHubIcon />
                     </Button>
                 </Tooltip>
@@ -67,7 +68,8 @@ function Home() {
                         &nbsp; &nbsp; &nbsp;
 
                 <Tooltip classes={{ tooltip: classes.customTooltip }} title="LinkedIn Profile" arrow>
-                    <Button target="_blank" href="https://www.linkedin.com/in/mani-bharathi-284176194/" variant="contained">
+                    <Button style={{ backgroundColor: "#F2F3F4" }} variant="contained"
+                        target="_blank" href="https://www.linkedin.com/in/mani-bharathi-284176194/" >
                         <LinkedInIcon />
                     </Button>
                 </Tooltip>

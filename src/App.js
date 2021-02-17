@@ -1,7 +1,7 @@
 import './css/App.css'
 import Navbar from "./components/Navbar"
 import HomePage from "./components/HomePage"
-import ProjectPage from "./components/ProjectPage"
+import ProjectsPage from "./components/ProjectsPage"
 import ContactPage from "./components/ContactPage"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
@@ -18,7 +18,7 @@ function App() {
           </Route>
 
           <Route path="/projects" >
-            <ProjectPage />
+            <ProjectsPage />
           </Route>
 
           <Route path="/contact" >
