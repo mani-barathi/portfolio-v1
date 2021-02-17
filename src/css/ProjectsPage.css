@@ -19,17 +19,23 @@
     border-top: 1px solid lightgray;    
 }
 
-.projects__container{
+.projects__container,.projects__small{
     width: 100%;
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr;
     grid-gap:1rem;
+}
+
+.projects__small{
+    padding: 1rem 0;
     margin-bottom:4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
 }
 
 
-@media screen and (max-width:800px){
+@media screen and (max-width:700px){
     .projects__container{
         grid-template-columns: 1fr ;
     }

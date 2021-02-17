@@ -1,6 +1,7 @@
 import React from 'react'
 import "../css/ProjectsPage.css"
 import Project from "./Project"
+import ProjectSmall from "./ProjectSmall"
 import { withStyles } from "@material-ui/core/styles"
 import { Typography } from "@material-ui/core"
 
@@ -45,6 +46,15 @@ function ProjectsPage() {
 
                 <div className="projects__container">
                     {projects.map(project => <Project key={project.name} data={project} />)}
+                </div>
+            </div>
+            <div className="projects__wrapper">
+                <CustomColorTypography variant="h5" > Other Noteworthy Projects</CustomColorTypography>
+
+                <hr className="projects__hrDivider" />
+
+                <div className="projects__small">
+                    {[...projects, ...projects, ...projects].map(project => <ProjectSmall key={project.name} data={project} />)}
                 </div>
             </div>
 

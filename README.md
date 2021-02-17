@@ -2,7 +2,7 @@
 Developing my Portfolio Site using React🚀
 
 ### Currently Working 👇
-- [ ] Project Design
+- [x] ~Project Design~
 - [x] ~Contact Page~
 - [x] ~Home Page~
 - [x] ~Navbar~
