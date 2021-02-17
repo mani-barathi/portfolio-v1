@@ -1,7 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react'
 import "../css/HomePage.css"
+import { Tooltip, Button } from "@material-ui/core"
+import { makeStyles } from '@material-ui/core/styles'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+
+const useStyles = makeStyles(theme => ({
+    customTooltip: { fontSize: '0.7rem' }
+}))
 
 function Home() {
+    const classes = useStyles()
     const [showText, setShowText] = useState(false)
     const nameRef = useRef()
 
@@ -48,6 +57,21 @@ function Home() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eius.
             </h3>
 
+            <div style={{ marginTop: "1rem" }}>
+                <Tooltip classes={{ tooltip: classes.customTooltip }} title="GitHub Profile" arrow>
+                    <Button target="_blank" href="https://github.com/mani-barathi" variant="contained">
+                        <GitHubIcon />
+                    </Button>
+                </Tooltip>
+
+                        &nbsp; &nbsp; &nbsp;
+
+                <Tooltip classes={{ tooltip: classes.customTooltip }} title="LinkedIn Profile" arrow>
+                    <Button target="_blank" href="https://www.linkedin.com/in/mani-bharathi-284176194/" variant="contained">
+                        <LinkedInIcon />
+                    </Button>
+                </Tooltip>
+            </div>
 
             <h4 className="love-text">Made with 💙</h4>
         </div>

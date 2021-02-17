@@ -6,5 +6,10 @@ Developing my Portfolio Site using React🚀
 - [x] ~Home Page~
 - [x] ~Navbar~
 
+## Technology Used
+* **React** (FrontEnd)
+    * **Material-UI** - For Icons and prebuilt Components. (**package**)
+    * **react-router-dom** - To manage routing between different pages. (**package**)
+
 ### Preview
 <img src="./public/preview.JPG" />
