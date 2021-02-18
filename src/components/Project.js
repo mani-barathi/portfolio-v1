@@ -28,10 +28,12 @@ function Project({ data }) {
                 </div>
 
                 <div className="project__infoLinks">
-                    <Button href={data.githubLink} target="_blank"
-                        startIcon={<GitHubIcon />} variant="contained" >
-                        GitHub
-                    </Button>
+                    {data.githubLink &&
+                        <Button href={data.githubLink} target="_blank"
+                            startIcon={<GitHubIcon />} variant="contained" >
+                            GitHub
+                        </Button>
+                    }
 
                         &nbsp;&nbsp;&nbsp;
 
@@ -39,7 +41,7 @@ function Project({ data }) {
                         <Button href={data.liveLink} target="_blank"
                             startIcon={<OpenInNewIcon />} variant="contained" >
                             Live
-                            </Button>
+                        </Button>
                     }
                 </div>
             </div>

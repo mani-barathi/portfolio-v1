@@ -35,7 +35,7 @@ function ContactPage() {
                         GitHub
                     </Button>
                     &nbsp; &nbsp; &nbsp;
-                    <Button target="_blank" href="https://www.linkedin.com/in/mani-bharathi-284176194/" variant="contained"
+                    <Button target="_blank" href="https://www.linkedin.com/in/mani-bharathi-08/" variant="contained"
                         startIcon={<LinkedInIcon />} color="primary">
                         LinkedIn
                     </Button>

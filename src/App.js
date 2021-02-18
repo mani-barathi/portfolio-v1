@@ -26,6 +26,7 @@ function App() {
           </Route>
 
         </Switch>
+        <h4 className="app__loveText">Made with 💙</h4>
       </div>
     </Router>
   )

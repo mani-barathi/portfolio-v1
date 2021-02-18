@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "../css/ProjectsPage.css"
 import Project from "./Project"
 import ProjectSmall from "./ProjectSmall"
 import { withStyles } from "@material-ui/core/styles"
 import { Typography } from "@material-ui/core"
+
+import sanity from "../sanity"
 
 const CustomColorTypography = withStyles({
     root: {
@@ -12,22 +14,34 @@ const CustomColorTypography = withStyles({
 })(Typography)
 
 function ProjectsPage() {
-    const projects = [{
-        name: "Music Streaming App",
-        description: "A Music Streaming Web App",
-        imageUrl: "https://mani-barathi.github.io/assets/music-streaming-app.JPG",
-        technologies: ['React', 'Material-UI', 'Firebase'],
-        githubLink: "https://github.com/mani-barathi/Music-Streaming-App",
-        liveLink: "https://music-streaming-app-4a392.web.app/"
-    },
-    {
-        name: "Socialmedia",
-        description: "A Website Inspired from Instagram",
-        imageUrl: "https://mani-barathi.github.io/assets/socialmedia.jpg",
-        technologies: ['Django', 'Bootstrap', 'AWS'],
-        githubLink: "https://github.com/mani-barathi/Socialmedia",
-        liveLink: "http://socialmediadjango.herokuapp.com/"
-    }]
+    const [mainProjects, setMainProjects] = useState([])
+    const [secondaryProjects, setSecondaryProjects] = useState([])
+
+    useEffect(() => {
+        sanity.fetch(`*[_type == 'project']{ ..., 'imageUrl': image.asset->url }`)
+            .then(result => {
+                console.log(result)
+                setMainProjects(result.filter(obj => obj.show))
+                setSecondaryProjects(result.filter(obj => !obj.show))
+            })
+    }, [])
+
+    // const projects = [{
+    //     name: "Music Streaming App",
+    //     description: "A Music Streaming Web App",
+    //     imageUrl: "https://mani-barathi.github.io/assets/music-streaming-app.JPG",
+    //     technologies: ['React', 'Material-UI', 'Firebase'],
+    //     githubLink: "https://github.com/mani-barathi/Music-Streaming-App",
+    //     liveLink: "https://music-streaming-app-4a392.web.app/"
+    // },
+    // {
+    //     name: "Socialmedia",
+    //     description: "A Website Inspired from Instagram",
+    //     imageUrl: "https://mani-barathi.github.io/assets/socialmedia.jpg",
+    //     technologies: ['Django', 'Bootstrap', 'AWS'],
+    //     githubLink: "https://github.com/mani-barathi/Socialmedia",
+    //     liveLink: "http://socialmediadjango.herokuapp.com/"
+    // }]
 
     return (
         <div className="projects" >
@@ -45,7 +59,7 @@ function ProjectsPage() {
                 </Typography>
 
                 <div className="projects__container">
-                    {projects.map(project => <Project key={project.name} data={project} />)}
+                    {mainProjects.map(project => <Project key={project._id} data={project} />)}
                 </div>
             </div>
             <div className="projects__wrapper">
@@ -54,11 +68,10 @@ function ProjectsPage() {
                 <hr className="projects__hrDivider" />
 
                 <div className="projects__small">
-                    {[...projects, ...projects, ...projects].map(project => <ProjectSmall key={project.name} data={project} />)}
+                    {secondaryProjects.map(project => <ProjectSmall key={project._id} data={project} />)}
                 </div>
             </div>
 
-            <h4 className="love-text">Made with 💙</h4>
         </div>
     )
 }

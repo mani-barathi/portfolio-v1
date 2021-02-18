@@ -54,7 +54,8 @@ function Home() {
             </h1>
 
             <h3 className={`home__description ${showText && 'fade'}`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, eius.
+                I'm a Computer Science student from Chennai. I enjoy Coding and Exploring new Technologies. Currently I'm Exploring Python and Web Development.
+                Apart from coding, I like Speedcubing.
             </h3>
 
             <div style={{ marginTop: "1rem" }}>
@@ -69,13 +70,12 @@ function Home() {
 
                 <Tooltip classes={{ tooltip: classes.customTooltip }} title="LinkedIn Profile" arrow>
                     <Button style={{ backgroundColor: "#F2F3F4" }} variant="contained"
-                        target="_blank" href="https://www.linkedin.com/in/mani-bharathi-284176194/" >
+                        target="_blank" href="https://www.linkedin.com/in/mani-bharathi-08/" >
                         <LinkedInIcon />
                     </Button>
                 </Tooltip>
             </div>
 
-            <h4 className="love-text">Made with 💙</h4>
         </div>
     )
 }

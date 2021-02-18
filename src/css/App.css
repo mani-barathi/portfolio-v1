@@ -6,11 +6,10 @@
     position: relative;
 }
 
-.love-text{
-    position: absolute;
-    bottom: 5px;
+.app__loveText{
     width: 100%;
     text-align: center;
     font-weight: 400;
     opacity: 0.8;
+    padding-bottom: 0.4rem;
 }
