@@ -61,7 +61,15 @@ export default {
             name: 'show',
             title: 'Show',
             type: 'boolean'
+        },
+        {
+            name: 'order',
+            title: 'Order',
+            type: 'number'
         }
     ],
-
+    initialValue: {
+        show: false,
+        order: 9
+    }
 }

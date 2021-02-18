@@ -13,9 +13,9 @@ function App() {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    sanity.fetch(`*[_type == 'project']{ ..., 'imageUrl': image.asset->url }`)
+    sanity.fetch(`*[_type == 'project'] | order(order asc) { ..., 'imageUrl': image.asset->url }`)
       .then(result => {
-        console.log(result)
+        console.log('Data Fetched:', result)
         setProjects(result)
       })
   }, [])

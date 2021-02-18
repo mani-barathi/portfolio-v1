@@ -19,6 +19,7 @@ function Home() {
             setShowText(true)
         }, 800)
 
+        if (!nameRef.current) return
         const NAME = nameRef.current.textContent
         nameRef.current.innerHTML = ''
 
@@ -28,6 +29,7 @@ function Home() {
 
         let count = 0;
         function animateLetterByLetter() {
+            if (!nameRef.current) return
             const span = nameRef.current.querySelectorAll('span')[count]
             span.classList.add('fade')
             count++
@@ -38,6 +40,8 @@ function Home() {
             }
         }
         let timer = setInterval(animateLetterByLetter, 50)
+
+        return () => clearInterval(timer)
 
     }, [])
 
