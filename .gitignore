@@ -25,5 +25,7 @@ yarn-error.log*
 
 .eslintcache
 
-/studio/sanity.json
-/studio/yarn.lock
+/src/studio/sanity.json
+/src/studio/yarn.lock
+
+/src/sanity.js

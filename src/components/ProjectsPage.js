@@ -3,9 +3,8 @@ import "../css/ProjectsPage.css"
 import Project from "./Project"
 import ProjectSmall from "./ProjectSmall"
 import { withStyles } from "@material-ui/core/styles"
-import { Typography } from "@material-ui/core"
+import { Typography, CircularProgress } from "@material-ui/core"
 
-import sanity from "../sanity"
 
 const CustomColorTypography = withStyles({
     root: {
@@ -13,35 +12,25 @@ const CustomColorTypography = withStyles({
     }
 })(Typography)
 
-function ProjectsPage() {
+function ProjectsPage({ projects }) {
     const [mainProjects, setMainProjects] = useState([])
     const [secondaryProjects, setSecondaryProjects] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        sanity.fetch(`*[_type == 'project']{ ..., 'imageUrl': image.asset->url }`)
-            .then(result => {
-                console.log(result)
-                setMainProjects(result.filter(obj => obj.show))
-                setSecondaryProjects(result.filter(obj => !obj.show))
-            })
-    }, [])
+        if (projects?.length === 0) return
+        console.log(projects)
+        setMainProjects(projects.filter(obj => obj.show))
+        setSecondaryProjects(projects.filter(obj => !obj.show))
+        setLoading(false)
+    }, [projects])
 
-    // const projects = [{
-    //     name: "Music Streaming App",
-    //     description: "A Music Streaming Web App",
-    //     imageUrl: "https://mani-barathi.github.io/assets/music-streaming-app.JPG",
-    //     technologies: ['React', 'Material-UI', 'Firebase'],
-    //     githubLink: "https://github.com/mani-barathi/Music-Streaming-App",
-    //     liveLink: "https://music-streaming-app-4a392.web.app/"
-    // },
-    // {
-    //     name: "Socialmedia",
-    //     description: "A Website Inspired from Instagram",
-    //     imageUrl: "https://mani-barathi.github.io/assets/socialmedia.jpg",
-    //     technologies: ['Django', 'Bootstrap', 'AWS'],
-    //     githubLink: "https://github.com/mani-barathi/Socialmedia",
-    //     liveLink: "http://socialmediadjango.herokuapp.com/"
-    // }]
+    if (loading)
+        return (
+            <div className="projectspage__loader">
+                <CircularProgress color="secondary" />
+            </div>
+        )
 
     return (
         <div className="projects" >

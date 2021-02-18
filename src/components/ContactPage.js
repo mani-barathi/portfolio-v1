@@ -43,7 +43,6 @@ function ContactPage() {
 
             </div>
 
-            <h4 className="love-text">Made with 💙</h4>
         </div >
     )
 }

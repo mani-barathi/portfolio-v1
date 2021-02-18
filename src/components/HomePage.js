@@ -54,8 +54,8 @@ function Home() {
             </h1>
 
             <h3 className={`home__description ${showText && 'fade'}`}>
-                I'm a Computer Science student from Chennai. I enjoy Coding and Exploring new Technologies. Currently I'm Exploring Python and Web Development.
-                Apart from coding, I like Speedcubing.
+                A Computer Science student from Chennai. I enjoy Coding and Exploring New Technologies.
+                Apart from Tech, I like Speedcubing.
             </h3>
 
             <div style={{ marginTop: "1rem" }}>

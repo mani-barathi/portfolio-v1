@@ -22,6 +22,8 @@
     right: 0;
     background-color: rgba(245, 245, 245, 0.8);
     backdrop-filter: blur(10px);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .project__info{
