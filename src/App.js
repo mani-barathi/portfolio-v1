@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import HomePage from "./components/HomePage"
 import ProjectsPage from "./components/ProjectsPage"
 import ContactPage from "./components/ContactPage"
+import AdminPage from "./components/AdminPage"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -36,6 +37,10 @@ function App() {
 
           <Route path="/contact" >
             <ContactPage />
+          </Route>
+
+          <Route path="/admin" >
+            <AdminPage />
           </Route>
 
         </Switch>

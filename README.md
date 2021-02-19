@@ -4,6 +4,7 @@ Developing my Portfolio Site using React🚀, Firebase🔥 and Sanity✨
 Click [**Here**](https://manibarathi.web.app/) to Visit the Website.
 
 ### Currently Working 👇
+- [x] ~Admin Page~
 - [x] ~Pushing ContactPage Messages to Firestore~
 - [x] ~Connecting Firebase~
 - [x] ~Connecting Sanity~
