@@ -10,12 +10,12 @@ function Project({ data }) {
             <img src={data.imageUrl} alt="" className="project__image" />
 
             <div className="project__title">
-                <Typography variant="h5" align="right" color="secondary" >{data.name}</Typography>
+                <Typography variant="h6" align="left" color="secondary" >{data.name}</Typography>
             </div>
 
             <div className="project__info">
-                <Typography variant="h5" align="right" color="secondary" >{data.name}</Typography>
-                <Typography variant="subtitle1" align="right" >
+                <Typography variant="h6" align="left" color="secondary" >{data.name}</Typography>
+                <Typography variant="subtitle1" align="left" >
                     {data.description}
                 </Typography>
 
@@ -29,7 +29,7 @@ function Project({ data }) {
 
                 <div className="project__infoLinks">
                     {data.githubLink &&
-                        <Button href={data.githubLink} target="_blank"
+                        <Button href={data.githubLink} target="_blank" size="small"
                             startIcon={<GitHubIcon />} variant="contained" >
                             GitHub
                         </Button>
@@ -38,7 +38,7 @@ function Project({ data }) {
                         &nbsp;&nbsp;&nbsp;
 
                         {data.liveLink &&
-                        <Button href={data.liveLink} target="_blank"
+                        <Button href={data.liveLink} target="_blank" size="small"
                             startIcon={<OpenInNewIcon />} variant="contained" >
                             Live
                         </Button>

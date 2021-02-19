@@ -27,19 +27,22 @@
     border-top: 1px solid lightgray;    
 }
 
-.projects__container,.projects__small{
+.projects__container{
     width: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(450px,1fr));
     grid-gap:1rem;
 }
 
 .projects__small{
+    width: 100%;
     padding: 1rem 0;
     margin-bottom:4rem;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    grid-gap:1rem;
+    justify-items: center;
 }
 
 

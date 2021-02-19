@@ -5,9 +5,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
-const useStyles = makeStyles(theme => ({
-    customTooltip: { fontSize: '0.7rem' }
-}))
 
 function Home() {
     const classes = useStyles()
@@ -64,7 +61,7 @@ function Home() {
 
             <div style={{ marginTop: "1rem" }}>
                 <Tooltip classes={{ tooltip: classes.customTooltip }} title="GitHub Profile" arrow>
-                    <Button style={{ backgroundColor: "#F2F3F4" }} variant="contained"
+                    <Button style={styles.button} variant="contained"
                         target="_blank" href="https://github.com/mani-barathi" >
                         <GitHubIcon />
                     </Button>
@@ -73,7 +70,7 @@ function Home() {
                         &nbsp; &nbsp; &nbsp;
 
                 <Tooltip classes={{ tooltip: classes.customTooltip }} title="LinkedIn Profile" arrow>
-                    <Button style={{ backgroundColor: "#F2F3F4" }} variant="contained"
+                    <Button style={styles.button} variant="contained"
                         target="_blank" href="https://www.linkedin.com/in/mani-bharathi-08/" >
                         <LinkedInIcon />
                     </Button>
@@ -83,5 +80,16 @@ function Home() {
         </div>
     )
 }
+
+const styles = {
+    button: {
+        backgroundColor: "#F2F3F4",
+        color: "#34495E"           // var(--nameTextColor)
+    }
+}
+
+const useStyles = makeStyles(theme => ({
+    customTooltip: { fontSize: '0.7rem' }
+}))
 
 export default Home

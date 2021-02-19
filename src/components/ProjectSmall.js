@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/ProjectSmall.css"
+import { withStyles } from "@material-ui/core/styles"
 import { Typography, IconButton, Chip } from "@material-ui/core"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import OpenInNewIcon from '@material-ui/icons/OpenInNew'
@@ -23,7 +24,7 @@ function ProjectSmall({ data }) {
             </div>
 
             <div className="projectsmall__text">
-                <Typography variant="h6"> {data.name} </Typography>
+                <CustomColorTypography variant="h6"> {data.name} </CustomColorTypography>
                 <Typography variant="subtitle1">
                     {data.description}
                 </Typography>
@@ -40,5 +41,11 @@ function ProjectSmall({ data }) {
         </div>
     )
 }
+
+const CustomColorTypography = withStyles({
+    root: {
+        color: "#34495E"     // var(--nameTextColor)
+    }
+})(Typography)
 
 export default ProjectSmall

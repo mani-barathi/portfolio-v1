@@ -4,10 +4,17 @@ import {
     Typography, TextField, Button,
     Dialog, DialogTitle, DialogContent, DialogActions
 } from "@material-ui/core"
+import { withStyles } from "@material-ui/core/styles"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 import { db, getTimestamp } from "../firebase"
+
+const CustomColorTypography = withStyles({
+    root: {
+        color: "#414141"
+    }
+})(Typography)
 
 function ContactPage() {
     const formRef = useRef()
@@ -36,7 +43,7 @@ function ContactPage() {
     return (
         <div className="contact" >
             <div className="contact__wrapper">
-                <Typography variant="h4"> Get in touch </Typography>
+                <CustomColorTypography variant="h4"> Get in touch </CustomColorTypography>
 
                 <form onSubmit={handleFormSubmit} ref={formRef} className="contact__form" autoComplete="off">
                     <Typography color="textPrimary" variant="body1"> Whether you're interested in working on a project together or just want to say hello, feel free to leave a Message and I'll get back to you as soon as I can! </Typography>

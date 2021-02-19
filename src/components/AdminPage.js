@@ -24,6 +24,7 @@ function AdminPage() {
         return unsubscribe
     }, [])
 
+
     const handleAdminLogout = () => {
         auth.signOut()
             .then(() => setAdmin(null))
@@ -32,7 +33,7 @@ function AdminPage() {
 
 
     const deleteMessage = (messageId) => {
-        if (window.confirm('Do You want to Delete that Message?'))
+        if (window.confirm('Do You want to Delete this Message?'))
             db.collection('messages').doc(messageId).delete()
     }
 
@@ -64,6 +65,9 @@ function AdminPage() {
                                 </IconButton>
                             </div>
                             <Typography variant="subtitle1">{message.data.text}</Typography>
+                            <Typography variant="caption" display="block" align="right">
+                                {message.data.timestamp.toDate().toDateString()}
+                            </Typography>
 
                         </div>
                     ))}

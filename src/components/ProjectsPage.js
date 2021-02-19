@@ -5,13 +5,6 @@ import ProjectSmall from "./ProjectSmall"
 import { withStyles } from "@material-ui/core/styles"
 import { Typography, CircularProgress } from "@material-ui/core"
 
-
-const CustomColorTypography = withStyles({
-    root: {
-        color: "#424949"
-    }
-})(Typography)
-
 function ProjectsPage({ projects }) {
     const [mainProjects, setMainProjects] = useState([])
     const [secondaryProjects, setSecondaryProjects] = useState([])
@@ -64,5 +57,11 @@ function ProjectsPage({ projects }) {
         </div>
     )
 }
+
+const CustomColorTypography = withStyles({
+    root: {
+        color: "#424949"
+    }
+})(Typography)
 
 export default ProjectsPage
