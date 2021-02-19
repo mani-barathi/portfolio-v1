@@ -66,15 +66,17 @@ function ContactPage() {
 
             </div>
 
-            <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={Boolean(message)}>
-                <DialogTitle id="simple-dialog-title">Message Sent</DialogTitle>
-                <DialogContent>
-                    <Typography> {message} </Typography>
-                </DialogContent>
-                <DialogActions>
-                    <Button variant="contained" color="secondary" onClick={handleClose}>Ok</Button>
-                </DialogActions>
-            </Dialog>
+            { message &&
+                <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={Boolean(message)}>
+                    <DialogTitle id="simple-dialog-title">Message Sent</DialogTitle>
+                    <DialogContent>
+                        <Typography> {message} </Typography>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button variant="contained" color="secondary" onClick={handleClose}>Ok</Button>
+                    </DialogActions>
+                </Dialog>
+            }
 
         </div >
     )
