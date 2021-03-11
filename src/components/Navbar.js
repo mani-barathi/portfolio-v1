@@ -28,7 +28,7 @@ function Navbar() {
         <div className="navbar shadow">
             <div className="navbar__wrapper">
                 <div className="navbar__left">
-                    <img src="https://raw.githubusercontent.com/mani-barathi/mani-barathi.github.io/master/assets/favicon.ico" alt="" className="navbar__logo" />
+                    <img src="/favicon.ico" alt="" className="navbar__logo" />
                 </div>
 
                 <div className="navbar__right">

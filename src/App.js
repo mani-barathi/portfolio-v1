@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import './css/App.css'
 import Navbar from "./components/Navbar"
-import HomePage from "./components/HomePage"
-import ProjectsPage from "./components/ProjectsPage"
-import ContactPage from "./components/ContactPage"
-import AdminPage from "./components/AdminPage"
+import HomePage from "./pages/HomePage"
+import ProjectsPage from "./pages/ProjectsPage"
+import ContactPage from "./pages/ContactPage"
+import AdminPage from "./pages/AdminPage"
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -18,7 +18,7 @@ function App() {
       .then(result => {
         console.log('Data Fetched:', result)
         setProjects(result)
-      })
+      }).catch(err => console.log(err))
   }, [])
 
   return (

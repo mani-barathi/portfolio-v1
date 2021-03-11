@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../css/ProjectsPage.css"
-import Project from "./Project"
-import ProjectSmall from "./ProjectSmall"
+import Project from "../components/Project"
+import ProjectSmall from "../components/ProjectSmall"
 import { withStyles } from "@material-ui/core/styles"
 import { Typography, CircularProgress } from "@material-ui/core"
 
@@ -12,7 +12,6 @@ function ProjectsPage({ projects }) {
 
     useEffect(() => {
         if (projects?.length === 0) return
-        console.log(projects)
         setMainProjects(projects.filter(obj => obj.show))
         setSecondaryProjects(projects.filter(obj => !obj.show))
         setLoading(false)

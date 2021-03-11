@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "../css/AdminPage.css"
-import AdminLogin from './AdminLogin'
+import AdminLogin from '../components/AdminLogin'
 
 import { Typography, Button, IconButton } from "@material-ui/core"
 import DeleteIcon from "@material-ui/icons/Delete"
