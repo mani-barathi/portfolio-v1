@@ -1,59 +1,64 @@
-.project{
-    margin: 1rem 0;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    box-shadow:0px 5px 15px 0px rgba(50, 50, 50, 0.2);
-    position: relative;
+.project {
+  margin: 1rem 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.2);
+  position: relative;
+  width: 100%;
+  max-width: 500px;
 }
 
-.project__image{
-    width: 100%;
-    max-width: 500px;
-    object-fit: cover;
-    border-radius: 5px;
+.project__image {
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
-.project__info,.project__title{
-    padding: 0.5rem 1rem;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(245, 245, 245, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transition: all 0.3s ease;
+.project__info,
+.project__title {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(245, 245, 245, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-.project__info{
-    opacity: 0;
-    visibility: 0;
-    transform: translateY(5px);
+.project__info {
+  opacity: 0;
+  visibility: 0;
+  transform: translateY(5px);
 }
 
-.project:hover .project__info, .project:active .project__info{
-    opacity: 1;
-    visibility: 1;
-    transform: translateY(0);
+.project:hover .project__info,
+.project:active .project__info {
+  opacity: 1;
+  visibility: 1;
+  transform: translateY(0);
 }
 
-.project__infoChipsContainer,.project__infoLinks{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
+.project__infoChipsContainer,
+.project__infoLinks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
-.project__infoChip{
-    margin: 0.25rem;
+.project__infoChip {
+  margin: 0.25rem;
 }
 
-@media screen and (max-width:375px){
-    .project__infoChipsContainer{
-        display: none;
-    }
+@media screen and (max-width: 375px) {
+  .project__infoChipsContainer {
+    display: none;
+  }
 
-    .project__info{
-        height: 100%;
-    }
+  .project__info {
+    height: 100%;
+  }
 }

@@ -1,25 +1,28 @@
-import { useState, useEffect } from "react"
-import './css/App.css'
-import Navbar from "./components/Navbar"
-import HomePage from "./pages/HomePage"
-import ProjectsPage from "./pages/ProjectsPage"
-import ContactPage from "./pages/ContactPage"
-import AdminPage from "./pages/AdminPage"
+import { useState, useEffect } from "react";
+import "./css/App.css";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
+import AdminPage from "./pages/AdminPage";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import sanity from "./sanity"
+import sanity from "./sanity";
 
 function App() {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    sanity.fetch(`*[_type == 'project'] | order(order asc) { ..., 'imageUrl': image.asset->url }`)
-      .then(result => {
-        console.log('Data Fetched:', result)
-        setProjects(result)
-      }).catch(err => console.log(err))
-  }, [])
+    sanity
+      .fetch(
+        `*[_type == 'project'] | order(order asc) { ..., 'imageUrl': image.asset->url }`
+      )
+      .then((result) => {
+        setProjects(result);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <Router>
@@ -31,23 +34,22 @@ function App() {
             <HomePage />
           </Route>
 
-          <Route path="/projects" >
+          <Route path="/projects">
             <ProjectsPage projects={projects} />
           </Route>
 
-          <Route path="/contact" >
+          <Route path="/contact">
             <ContactPage />
           </Route>
 
-          <Route path="/admin" >
+          <Route path="/admin">
             <AdminPage />
           </Route>
-
         </Switch>
         <h4 className="app__loveText">Made with 💙</h4>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

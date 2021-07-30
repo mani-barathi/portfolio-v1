@@ -1,16 +1,16 @@
-.app{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
 }
 
-.app__loveText{
-    width: 100%;
-    text-align: center;
-    font-weight: 400;
-    opacity: 0.8;
-    padding-bottom: 0.4rem;
-    user-select: none;
+.app__loveText {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  opacity: 0.8;
+  padding-bottom: 0.4rem;
+  user-select: none;
 }
