@@ -79,9 +79,20 @@
   .home__greetingText {
     font-size: 1.5rem;
   }
+  .home__description {
+    font-size: 0.97rem;
+  }
+  .home__image {
+    width: 175px;
+    height: 175px;
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
+  .home__image {
+    width: 155px;
+    height: 155px;
+  }
   .home__nameText {
     font-size: 2.7rem;
   }
@@ -89,6 +100,6 @@
     font-size: 1.25rem;
   }
   .home__description {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }

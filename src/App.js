@@ -1,27 +1,21 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./css/App.css";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
+import WorksPage from "./pages/WorksPage";
 import ContactPage from "./pages/ContactPage";
 import AdminPage from "./pages/AdminPage";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import sanity from "./sanity";
+import { getBlogs, getProjects } from "./utils";
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    sanity
-      .fetch(
-        `*[_type == 'project'] | order(order asc) { ..., 'imageUrl': image.asset->url }`
-      )
-      .then((result) => {
-        setProjects(result);
-      })
-      .catch((err) => console.log(err));
+    getProjects().then((p) => setProjects(p));
+    getBlogs().then((b) => setBlogs(b));
   }, []);
 
   return (
@@ -34,8 +28,8 @@ function App() {
             <HomePage />
           </Route>
 
-          <Route path="/projects">
-            <ProjectsPage projects={projects} />
+          <Route path="/works">
+            <WorksPage projects={projects} blogs={blogs} />
           </Route>
 
           <Route path="/contact">

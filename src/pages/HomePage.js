@@ -59,7 +59,7 @@ function Home() {
         New Technologies. Apart from Tech, I like Speedcubing.
       </h3>
 
-      <div style={{ marginTop: "1rem" }}>
+      <div style={{ margin: "1rem 0" }}>
         <Tooltip
           classes={{ tooltip: classes.customTooltip }}
           title="GitHub Profile"

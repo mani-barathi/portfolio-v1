@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "../css/ProjectsPage.css";
+import React from "react";
+import "../css/WorksPage.css";
 import Project from "../components/Project";
-// import ProjectSmall from "../components/ProjectSmall";
+import Blog from "../components/Blog";
 import { withStyles } from "@material-ui/core/styles";
 import { Typography, CircularProgress } from "@material-ui/core";
 
-function ProjectsPage({ projects }) {
-  const [loading, setLoading] = useState(true);
-  const [mainProjects, setMainProjects] = useState([]);
-
-  useEffect(() => {
-    if (projects?.length === 0) return;
-    setMainProjects(projects.filter((obj) => obj.show));
-    setLoading(false);
-  }, [projects]);
-
-  if (loading)
+function WorksPage({ projects, blogs }) {
+  if (!projects.length && !blogs.length)
     return (
       <div className="projectspage__loader">
         <CircularProgress color="secondary" />
@@ -32,8 +23,16 @@ function ProjectsPage({ projects }) {
         <hr className="projects__hrDivider" />
 
         <div className="projects__container">
-          {mainProjects.map((project) => (
+          {projects.map((project) => (
             <Project key={project._id} data={project} />
+          ))}
+        </div>
+
+        <CustomColorTypography variant="h5">Blogs</CustomColorTypography>
+        <hr className="projects__hrDivider" />
+        <div className="blogs__container">
+          {blogs?.map((blog) => (
+            <Blog key={blog._id} data={blog} />
           ))}
         </div>
       </div>
@@ -47,4 +46,4 @@ const CustomColorTypography = withStyles({
   },
 })(Typography);
 
-export default ProjectsPage;
+export default WorksPage;

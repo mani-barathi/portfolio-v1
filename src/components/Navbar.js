@@ -43,8 +43,8 @@ function Navbar() {
             Home
           </Button>
           <Button
-            onClick={() => goToRoute("/projects")}
-            color={currentLocation === "/projects" ? "secondary" : "inherit"}
+            onClick={() => goToRoute("/works")}
+            color={currentLocation === "/works" ? "secondary" : "inherit"}
           >
             Works
           </Button>
