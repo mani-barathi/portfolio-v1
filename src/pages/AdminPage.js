@@ -14,10 +14,10 @@ function AdminPage() {
   useEffect(() => {
     if (!admin) return;
 
-    const unsubscribe = db
-      .collection("messages")
+    db.collection("messages")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) => {
+      .get()
+      .then((snapshot) => {
         setMessages(
           snapshot.docs.map((doc) => ({
             id: doc.id,
@@ -25,8 +25,11 @@ function AdminPage() {
           }))
         );
       });
-    return unsubscribe;
   }, [admin]);
+
+  const deleteMessage = (id) => {
+    setMessages((prev) => prev.filter((m) => m.id !== id));
+  };
 
   const handleAdminLogout = () => {
     auth
@@ -55,6 +58,7 @@ function AdminPage() {
               key={message.id}
               id={message.id}
               data={message.data}
+              deleteMessage={deleteMessage}
             />
           ))}
         </div>
